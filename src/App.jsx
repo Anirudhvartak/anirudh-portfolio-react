@@ -110,7 +110,7 @@ const App = () => {
     setSubmitStatus('');
 
     try {
-      const response = await fetch('https://formspree.io/f/xovqqvqa', {
+      const response = await fetch('/api/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -120,13 +120,13 @@ const App = () => {
           lastName: formData.lastName,
           email: formData.email,
           phone: formData.phone,
-          message: formData.message,
-          _replyto: formData.email,
-          _subject: `New Portfolio Contact from ${formData.firstName} ${formData.lastName}`
+          message: formData.message
         })
       });
 
-      if (response.ok) {
+      const data = await response.json();
+
+      if (data.success) {
         setSubmitStatus('success');
         setFormData({
           firstName: '',
@@ -512,56 +512,65 @@ const App = () => {
                 <p className="mb-4">
                   I developed the uKnowva AI Chatbot to handle core HR operations like applying leave, checking salary, and tracking attendance through natural language. I also helped automate reimbursements using OCR-based invoice scanning, streamlining HR workflows with smart, user-centric automation.
                 </p>
+                <p className="mb-4">
+                  Beyond traditional development, I practice vibe coding — building projects purely for the joy of creating, experimenting with new technologies, and exploring creative solutions without constraints. It's where innovation meets passion.
+                </p>
               </div>
             </div>
             {/* Feature Boxes Grid */}
-            <div ref={aboutFeaturesRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 mt-16">
+            <div ref={aboutFeaturesRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
               <div className={`${aboutMeCardBgClass} ${isAboutFeaturesVisible ? 'animate-fadeInLeft delay-100' : 'opacity-0'}`}>
                 <div className="flex items-center space-x-3">
                   <Cpu size={24} className={aboutMeIconColor} />
                   <h3 className={`text-xl font-semibold ${aboutMeCardTextColor}`}>AI-Powered Development</h3>
                 </div>
               </div>
-              <div className={`${aboutMeCardBgClass} ${isAboutFeaturesVisible ? 'animate-fadeInRight delay-200' : 'opacity-0'}`}>
+              <div className={`${aboutMeCardBgClass} ${isAboutFeaturesVisible ? 'animate-fadeInUp delay-200' : 'opacity-0'}`}>
                 <div className="flex items-center space-x-3">
-                  <Headphones size={24} className={aboutMeIconColor} /> {/* Changed icon to Headphones */}
+                  <Headphones size={24} className={aboutMeIconColor} />
                   <h3 className={`text-xl font-semibold ${aboutMeCardTextColor}`}>Chatbot & Voice Tech Implementation</h3>
                 </div>
               </div>
-              <div className={`${aboutMeCardBgClass} ${isAboutFeaturesVisible ? 'animate-fadeInLeft delay-300' : 'opacity-0'}`}>
+              <div className={`${aboutMeCardBgClass} ${isAboutFeaturesVisible ? 'animate-fadeInRight delay-300' : 'opacity-0'}`}>
                 <div className="flex items-center space-x-3">
-                  <Activity size={24} className={aboutMeIconColor} /> {/* Changed icon to Activity */}
+                  <Activity size={24} className={aboutMeIconColor} />
                   <h3 className={`text-xl font-semibold ${aboutMeCardTextColor}`}>Automation & Workflow Systems</h3>
                 </div>
               </div>
-              <div className={`${aboutMeCardBgClass} ${isAboutFeaturesVisible ? 'animate-fadeInRight delay-400' : 'opacity-0'}`}>
+              <div className={`${aboutMeCardBgClass} ${isAboutFeaturesVisible ? 'animate-fadeInLeft delay-400' : 'opacity-0'}`}>
                 <div className="flex items-center space-x-3">
-                  <Users size={24} className={aboutMeIconColor} /> {/* Changed icon to Users */}
+                  <Users size={24} className={aboutMeIconColor} />
                   <h3 className={`text-xl font-semibold ${aboutMeCardTextColor}`}>HR Tech Domain Expertise</h3>
                 </div>
               </div>
-              <div className={`${aboutMeCardBgClass} ${isAboutFeaturesVisible ? 'animate-fadeInLeft delay-500' : 'opacity-0'}`}>
+              <div className={`${aboutMeCardBgClass} ${isAboutFeaturesVisible ? 'animate-fadeInUp delay-500' : 'opacity-0'}`}>
                 <div className="flex items-center space-x-3">
-                  <Award size={24} className={aboutMeIconColor} /> {/* Changed icon to Award */}
+                  <Award size={24} className={aboutMeIconColor} />
                   <h3 className={`text-xl font-semibold ${aboutMeCardTextColor}`}>Award-Winning Engineer</h3>
                 </div>
               </div>
               <div className={`${aboutMeCardBgClass} ${isAboutFeaturesVisible ? 'animate-fadeInRight delay-600' : 'opacity-0'}`}>
                 <div className="flex items-center space-x-3">
-                  <Layout size={24} className={aboutMeIconColor} /> {/* Changed icon to Layout */}
+                  <Layout size={24} className={aboutMeIconColor} />
                   <h3 className={`text-xl font-semibold ${aboutMeCardTextColor}`}>Frontend Engineering Excellence</h3>
                 </div>
               </div>
               <div className={`${aboutMeCardBgClass} ${isAboutFeaturesVisible ? 'animate-fadeInLeft delay-700' : 'opacity-0'}`}>
                 <div className="flex items-center space-x-3">
-                  <Server size={24} className={aboutMeIconColor} /> {/* Changed icon to Server */}
+                  <Server size={24} className={aboutMeIconColor} />
                   <h3 className={`text-xl font-semibold ${aboutMeCardTextColor}`}>Robust Backend Architecture</h3>
                 </div>
               </div>
-              <div className={`${aboutMeCardBgClass} ${isAboutFeaturesVisible ? 'animate-fadeInRight delay-800' : 'opacity-0'}`}>
+              <div className={`${aboutMeCardBgClass} ${isAboutFeaturesVisible ? 'animate-fadeInUp delay-800' : 'opacity-0'}`}>
                 <div className="flex items-center space-x-3">
-                  <GitBranch size={24} className={aboutMeIconColor} /> {/* Changed icon to GitBranch */}
+                  <GitBranch size={24} className={aboutMeIconColor} />
                   <h3 className={`text-xl font-semibold ${aboutMeCardTextColor}`}>Seamless API Integration</h3>
+                </div>
+              </div>
+              <div className={`${aboutMeCardBgClass} ${isAboutFeaturesVisible ? 'animate-fadeInRight delay-900' : 'opacity-0'}`}>
+                <div className="flex items-center space-x-3">
+                  <Sparkles size={24} className={aboutMeIconColor} />
+                  <h3 className={`text-xl font-semibold ${aboutMeCardTextColor}`}>Vibe Coding & Creative Experiments</h3>
                 </div>
               </div>
             </div>
