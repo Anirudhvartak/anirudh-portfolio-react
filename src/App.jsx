@@ -83,6 +83,68 @@ const App = () => {
   // State for mobile menu open/close
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // Contact form state
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState('');
+
+  // Handle form input changes
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('');
+
+    try {
+      const response = await fetch('https://formspree.io/f/xovqqvqa', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          _replyto: formData.email,
+          _subject: `New Portfolio Contact from ${formData.firstName} ${formData.lastName}`
+        })
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          message: ''
+        });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   // Refs for scroll reveal
   const [aboutRef, isAboutVisible] = useScrollReveal({ threshold: 0.1 });
   const [skillsRef, isSkillsVisible] = useScrollReveal({ threshold: 0.1 });
@@ -997,34 +1059,59 @@ const App = () => {
                   <p className={formTextClass}>
                     Always open to new opportunities and collaborations, I invite you to connect with me for any inquiries or project discussions.
                   </p>
-                  <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {submitStatus === 'success' && (
+                    <div className="mb-4 p-4 bg-green-800/30 border border-green-600 rounded-lg text-green-300">
+                      Thank you! Your message has been sent successfully.
+                    </div>
+                  )}
+                  {submitStatus === 'error' && (
+                    <div className="mb-4 p-4 bg-red-800/30 border border-red-600 rounded-lg text-red-300">
+                      Sorry, there was an error sending your message. Please try again.
+                    </div>
+                  )}
+                  <form className="grid grid-cols-1 md:grid-cols-2 gap-6" onSubmit={handleSubmit}>
                     <input
                       type="text"
+                      name="firstName"
                       placeholder="First name"
+                      value={formData.firstName}
+                      onChange={handleInputChange}
                       className={`${inputBgClass} md:col-span-1`}
                       required
                     />
                     <input
                       type="text"
+                      name="lastName"
                       placeholder="Last name"
+                      value={formData.lastName}
+                      onChange={handleInputChange}
                       className={`${inputBgClass} md:col-span-1`}
                       required
                     />
                     <input
                       type="email"
+                      name="email"
                       placeholder="Email address"
+                      value={formData.email}
+                      onChange={handleInputChange}
                       className={`${inputBgClass} md:col-span-1`}
                       required
                     />
                     <input
                       type="tel"
+                      name="phone"
                       placeholder="Phone number"
+                      value={formData.phone}
+                      onChange={handleInputChange}
                       className={`${inputBgClass} md:col-span-1`}
                     />
                     <div className="md:col-span-2 relative">
                       <textarea
+                        name="message"
                         placeholder="Message"
                         rows="6"
+                        value={formData.message}
+                        onChange={handleInputChange}
                         className={`${inputBgClass} w-full resize-none`}
                         required
                       ></textarea>
@@ -1033,9 +1120,10 @@ const App = () => {
                     <div className="md:col-span-2 flex justify-center">
                       <button
                         type="submit"
-                        className={sendButtonClass}
+                        disabled={isSubmitting}
+                        className={`${sendButtonClass} ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
                       >
-                        Send Now
+                        {isSubmitting ? 'Sending...' : 'Send Now'}
                       </button>
                     </div>
                   </form>
