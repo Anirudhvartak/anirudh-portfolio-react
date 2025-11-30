@@ -414,7 +414,7 @@ const App = () => {
               {/* Stat Card 1: Years of Experience */}
               <div className={`${statsCardBgClass} p-8 rounded-lg shadow-xl border ${statsCardBorderClass} text-center transition-all duration-300 transform hover:scale-105 ${isStatsVisible ? 'animate-fadeInLeft delay-100' : 'opacity-0'}`}>
                 <Award size={60} className={`mx-auto mb-4 ${statsNumberClass}`} />
-                <h3 className={`text-5xl font-extrabold mb-2 ${statsNumberClass}`}>2.7+</h3>
+                <h3 className={`text-5xl font-extrabold mb-2 ${statsNumberClass}`}>3+</h3>
                 <p className={`text-xl font-semibold ${statsTextClass}`}>Years of Experience</p>
               </div>
 
@@ -442,7 +442,7 @@ const App = () => {
             <div className="flex flex-col md:flex-row items-center md:space-x-8">
               <div className={`text-lg leading-relaxed text-center md:text-left text-gray-300`}>
                 <p className="mb-4">
-                  I’m Anirudh Vartak, a Full Stack Product Developer with 2.7+ years of experience building scalable and intelligent web systems. At uKnowva HRMS, I’ve been recognized as Star of the Year (2023) and Star of the Department (2024) for driving product innovation and core feature development.
+                  I’m Anirudh Vartak, a Full Stack Product Developer with 3+ years of experience building scalable and intelligent web systems. At uKnowva HRMS, I’ve been recognized as Star of the Year (2023) and Star of the Department (2024) for driving product innovation and core feature development.
                 </p>
                 <p className="mb-4">
                   I’ve built AI-powered prompt systems and dynamic form generators that use OpenAI to produce complete form layouts through JSON. I also developed a fully configurable speech-to-text module for real-time input and accessibility. My work spans modern, scalable UI features using PHP, MySQL, JavaScript, Joomla3, and Tabulator.js — often rewriting legacy logic into clean, reusable code.
@@ -804,28 +804,29 @@ const App = () => {
 
             {/* Project Cards Grid - Centered with dynamic column spanning */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 justify-items-center">
-                {/* Project Card 1: Intelligent Chatbot Assistant */}
+                {/* Project Card 1: Portfolio Chatbot Assistant */}
                 <div className={`${projectCardBgClass} group`}>
                   <div className={projectImageWrapperClass}>
                     <img
-                      src="https://placehold.co/600x400/2b3c4c/e0f2f7?text=Chatbot+Project" // Placeholder image for Chatbot Project
-                      alt="Intelligent Chatbot Assistant"
+                      src="/images/chatbot.png"
+                      alt="Portfolio Chatbot Assistant"
                       className={projectImageClass}
                     />
                   </div>
                   <div className="p-6">
-                    <h3 className={projectTitleClass}>Intelligent Chatbot Assistant <span className="text-sm font-normal text-gray-400">(Upcoming)</span></h3>
+                    <h3 className={projectTitleClass}>Portfolio Chatbot Assistant</h3>
                     <p className={projectDescClass}>
-                      An upcoming project focused on developing an AI-powered chatbot assistant for customer support. It will leverage natural language processing to understand user queries and provide accurate, real-time responses, enhancing user experience and streamlining support operations.
+                      An intelligent chatbot built to showcase my portfolio interactively. Features voice-to-text input using Web Speech API, accordion-style quick actions, and real-time responses about my skills, projects, experience, and awards. Built with pure JavaScript, no frameworks required.
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      <span className={projectTagClass}>Python</span>
-                      <span className={projectTagClass}>NLP</span>
-                      <span className={projectTagClass}>React</span>
+                      <span className={projectTagClass}>JavaScript</span>
+                      <span className={projectTagClass}>Web Speech API</span>
+                      <span className={projectTagClass}>jQuery</span>
+                      <span className={projectTagClass}>LocalStorage</span>
                     </div>
                     <div className="flex justify-between items-center mt-4">
                       <a
-                        href="#" // No live demo link for upcoming project
+                        href="https://anirudhvartak.github.io/portfolio-chatbot/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className={`font-medium flex items-center ${linkColorClass}`}
@@ -833,7 +834,7 @@ const App = () => {
                         Live Demo <ExternalLink size={16} className="ml-1" />
                       </a>
                       <a
-                        href="https://github.com/your-github/chatbot-project" // Placeholder GitHub link
+                        href="https://github.com/Anirudhvartak/portfolio-chatbot"
                         target="_blank"
                         rel="noopener noreferrer"
                         className={githubIconClass}
@@ -844,51 +845,11 @@ const App = () => {
                   </div>
                 </div>
 
-                {/* Project Card 2: Document OCR & Data Extraction */}
+                {/* Project Card 2: Flipkart Clone */}
                 <div className={`${projectCardBgClass} group`}>
                   <div className={projectImageWrapperClass}>
                     <img
-                      src="https://placehold.co/600x400/2b3c4c/e0f2f7?text=OCR+Project" // Placeholder image for OCR Project
-                      alt="Document OCR & Data Extraction"
-                      className={projectImageClass}
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className={projectTitleClass}>Document OCR & Data Extraction <span className="text-sm font-normal text-gray-400">(Upcoming)</span></h3>
-                    <p className={projectDescClass}>
-                      An upcoming project aiming to build an Optical Character Recognition (OCR) system for efficient data extraction from various document types. This will involve advanced image processing and machine learning techniques to accurately convert scanned documents and images into editable and searchable text.
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className={projectTagClass}>Python</span>
-                      <span className={projectTagClass}>OpenCV</span>
-                      <span className={projectTagClass}>Machine Learning</span>
-                    </div>
-                    <div className="flex justify-between items-center mt-4">
-                      <a
-                        href="#" // No live demo link for upcoming project
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`font-medium flex items-center ${linkColorClass}`}
-                      >
-                        Live Demo <ExternalLink size={16} className="ml-1" />
-                      </a>
-                      <a
-                        href="https://github.com/your-github/ocr-project" // Placeholder GitHub link
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={githubIconClass}
-                      >
-                        <Github size={24} />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Project Card 3: Flipkart Clone */}
-                <div className={`${projectCardBgClass} group`}>
-                  <div className={projectImageWrapperClass}>
-                    <img
-                      src="/images/flipkartclone.png" // Placeholder image for Flipkart Clone
+                      src="/images/flipkartclone.png"
                       alt="Flipkart Clone"
                       className={projectImageClass}
                     />
@@ -913,6 +874,87 @@ const App = () => {
                       </a>
                       <a
                         href="https://github.com/Anirudhvartak/flipkart_clone"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={githubIconClass}
+                      >
+                        <Github size={24} />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Project Card 3: Speech-to-Text Plugin */}
+                <div className={`${projectCardBgClass} group`}>
+                  <div className={projectImageWrapperClass}>
+                    <img
+                      src="/images/speechrecognization.png"
+                      alt="Speech-to-Text Plugin"
+                      className={projectImageClass}
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className={projectTitleClass}>Speech-to-Text Plugin</h3>
+                    <p className={projectDescClass}>
+                      A fully configurable speech recognition plugin with customizable UI options, real-time voice-to-text conversion, and multi-language support. Features include custom button integration, input field targeting, and callback functions for seamless integration into any web application. Built with Web Speech API and vanilla JavaScript.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className={projectTagClass}>JavaScript</span>
+                      <span className={projectTagClass}>Web Speech API</span>
+                      <span className={projectTagClass}>Voice Recognition</span>
+                      <span className={projectTagClass}>Plugin Architecture</span>
+                    </div>
+                    <div className="flex justify-between items-center mt-4">
+                      <a
+                        href="https://anirudhvartak.github.io/portfolio-chatbot/?chatbot=fullscreen"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`font-medium flex items-center ${linkColorClass}`}
+                      >
+                        Live Demo <ExternalLink size={16} className="ml-1" />
+                      </a>
+                      <a
+                        href="https://github.com/Anirudhvartak/speech-to-text-plugin"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={githubIconClass}
+                      >
+                        <Github size={24} />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Project Card 4: Document OCR & Data Extraction */}
+                <div className={`${projectCardBgClass} group`}>
+                  <div className={projectImageWrapperClass}>
+                    <img
+                      src="https://placehold.co/600x400/2b3c4c/e0f2f7?text=OCR+Project"
+                      alt="Document OCR & Data Extraction"
+                      className={projectImageClass}
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className={projectTitleClass}>Document OCR & Data Extraction <span className="text-sm font-normal text-gray-400">(Upcoming)</span></h3>
+                    <p className={projectDescClass}>
+                      An upcoming project aiming to build an Optical Character Recognition (OCR) system for efficient data extraction from various document types. This will involve advanced image processing and machine learning techniques to accurately convert scanned documents and images into editable and searchable text.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className={projectTagClass}>Python</span>
+                      <span className={projectTagClass}>OpenCV</span>
+                      <span className={projectTagClass}>Machine Learning</span>
+                    </div>
+                    <div className="flex justify-between items-center mt-4">
+                      <a
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`font-medium flex items-center ${linkColorClass}`}
+                      >
+                        Live Demo <ExternalLink size={16} className="ml-1" />
+                      </a>
+                      <a
+                        href="https://github.com/your-github/ocr-project"
                         target="_blank"
                         rel="noopener noreferrer"
                         className={githubIconClass}
@@ -1016,3 +1058,4 @@ const App = () => {
 };
 
 export default App;
+
