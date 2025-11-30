@@ -845,46 +845,7 @@ const App = () => {
                   </div>
                 </div>
 
-                {/* Project Card 2: Flipkart Clone */}
-                <div className={`${projectCardBgClass} group`}>
-                  <div className={projectImageWrapperClass}>
-                    <img
-                      src="/images/flipkartclone.png"
-                      alt="Flipkart Clone"
-                      className={projectImageClass}
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className={projectTitleClass}>Flipkart Clone</h3>
-                    <p className={projectDescClass}>
-                      A Flipkart clone built from scratch using HTML and CSS during my internship in 2023. Includes homepage, product listing, and detail pages. Not fully responsive but developed independently without any frameworks or AI assistance — purely for learning.
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className={projectTagClass}>HTML</span>
-                      <span className={projectTagClass}>CSS</span>
-                    </div>
-                    <div className="flex justify-between items-center mt-4">
-                      <a
-                        href="https://anirudhvartak.github.io/flipkart_clone/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`font-medium flex items-center ${linkColorClass}`}
-                      >
-                        Live Demo <ExternalLink size={16} className="ml-1" />
-                      </a>
-                      <a
-                        href="https://github.com/Anirudhvartak/flipkart_clone"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={githubIconClass}
-                      >
-                        <Github size={24} />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Project Card 3: Speech-to-Text Plugin */}
+                {/* Project Card 2: Speech-to-Text Plugin */}
                 <div className={`${projectCardBgClass} group`}>
                   <div className={projectImageWrapperClass}>
                     <img
@@ -915,6 +876,45 @@ const App = () => {
                       </a>
                       <a
                         href="https://github.com/Anirudhvartak/speech-to-text-plugin"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={githubIconClass}
+                      >
+                        <Github size={24} />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Project Card 3: Flipkart Clone */}
+                <div className={`${projectCardBgClass} group`}>
+                  <div className={projectImageWrapperClass}>
+                    <img
+                      src="/images/flipkartclone.png"
+                      alt="Flipkart Clone"
+                      className={projectImageClass}
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className={projectTitleClass}>Flipkart Clone</h3>
+                    <p className={projectDescClass}>
+                      A Flipkart clone built from scratch using HTML and CSS during my internship in 2023. Includes homepage, product listing, and detail pages. Not fully responsive but developed independently without any frameworks or AI assistance — purely for learning.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className={projectTagClass}>HTML</span>
+                      <span className={projectTagClass}>CSS</span>
+                    </div>
+                    <div className="flex justify-between items-center mt-4">
+                      <a
+                        href="https://anirudhvartak.github.io/flipkart_clone/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`font-medium flex items-center ${linkColorClass}`}
+                      >
+                        Live Demo <ExternalLink size={16} className="ml-1" />
+                      </a>
+                      <a
+                        href="https://github.com/Anirudhvartak/flipkart_clone"
                         target="_blank"
                         rel="noopener noreferrer"
                         className={githubIconClass}
